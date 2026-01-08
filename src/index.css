@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    --primary: 190 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 50% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 35 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 190 65% 45%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(190 65% 45%), hsl(190 75% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160 50% 50%), hsl(170 60% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(190 70% 50% / 0.95), hsl(160 60% 50% / 0.9));
+    
+    --shadow-soft: 0 4px 20px hsl(190 65% 45% / 0.1);
+    --shadow-medium: 0 8px 30px hsl(190 65% 45% / 0.15);
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 30% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 190 65% 55%;
+    --primary-foreground: 210 30% 8%;
+
+    --secondary: 160 50% 55%;
+    --secondary-foreground: 210 30% 8%;
+
+    --muted: 210 25% 16%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 35 85% 65%;
+    --accent-foreground: 210 30% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 190 65% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(190 65% 50%), hsl(190 75% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160 50% 55%), hsl(170 60% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(190 70% 45% / 0.9), hsl(160 60% 45% / 0.85));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Ensure proper text rendering on all devices */
+  html {
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Smooth scrolling */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer utilities {
+  /* Modern mobile optimizations */
+  @media (max-width: 640px) {
+    .mobile-text-balance {
+      text-wrap: balance;
+    }
+  }
+  
+  /* Enhanced card hover effects for mobile */
+  @media (hover: hover) {
+    .card-hover-effect {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover-effect:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  }
+  
+  /* Touch-friendly tap targets */
+  @media (max-width: 768px) {
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+  
+  /* Improved mobile spacing */
+  .mobile-safe-area {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Better mobile typography */
+  @media (max-width: 640px) {
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+  }
+}
