@@ -50,8 +50,8 @@ const ivTherapy = [
   },
   {
     name: "Libido Booster",
-    description: "",
-    ingredients: ""
+    description: "Assists men by increasing sexual drive and desire. Enhances fertility, energy levels, and sexual health through improved blood flow and hormone regulation.",
+    ingredients: "L-carnitine (promotes sperm motility and maturation), Vitamin B12 (supports fertility and energy), Tri-amino acids (increases blood flow for sexual health), Super BCO (double boost of B complex vitamins for energy and hormone regulation)"
   }
 ];
 
@@ -145,7 +145,6 @@ const generalServices = [
       "Family Planning / Contraception",
       "Nur-Isterate Injection",
       "Depo Injection",
-      "Evra Patch",
       "Emergency Contraceptive",
       "Pregnancy Test",
       "Choice Termination of Pregnancy"
@@ -216,7 +215,7 @@ const Services = () => {
                 {ivTherapy.map((service, index) => (
                   <Card
                     key={index}
-                    className="group/item relative overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in bg-gradient-to-br from-card to-card/95"
+                    className="group/item relative overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <CardContent className="p-4 sm:p-5">
@@ -322,20 +321,18 @@ const Services = () => {
             <CardContent className="relative p-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 {/* Image Section */}
-                <div className="relative min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] overflow-hidden order-2 lg:order-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-secondary/20" />
+                <div className="relative min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] flex items-center justify-center bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 order-2 lg:order-1 overflow-hidden">
                   <img 
                     src={woodTherapyImage} 
                     alt="Wood Therapy Massage Tools"
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    className="w-full h-full object-contain p-4 sm:p-6 lg:p-8 opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
                 </div>
 
                 {/* Services List Section */}
-                <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-card to-card/95 flex flex-col justify-center order-1 lg:order-2">
+                <div className="p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm flex flex-col justify-center order-1 lg:order-2">
                   <div className="mb-6 sm:mb-8">
                     <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                       Wood Therapy Massage
@@ -350,35 +347,35 @@ const Services = () => {
                     <ul className="space-y-3 sm:space-y-4">
                       <li className="flex items-start space-x-3 sm:space-x-4 group/item">
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-primary to-secondary rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <span className="text-sm sm:text-base font-semibold text-foreground group-hover/item:text-primary transition-colors">Lymphatic Detox</span>
                           <span className="text-xs sm:text-sm text-muted-foreground block mt-1">75 minutes</span>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3 sm:space-x-4 group/item">
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-primary to-secondary rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <span className="text-sm sm:text-base font-semibold text-foreground group-hover/item:text-primary transition-colors">Cellulite Buster</span>
                           <span className="text-xs sm:text-sm text-muted-foreground block mt-1">60 minutes</span>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3 sm:space-x-4 group/item">
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-primary to-secondary rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <span className="text-sm sm:text-base font-semibold text-foreground group-hover/item:text-primary transition-colors">Sculpt and Slim</span>
                           <span className="text-xs sm:text-sm text-muted-foreground block mt-1">60 minutes</span>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3 sm:space-x-4 group/item">
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-primary to-secondary rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <span className="text-sm sm:text-base font-semibold text-foreground group-hover/item:text-primary transition-colors">Tummy Target</span>
                           <span className="text-xs sm:text-sm text-muted-foreground block mt-1">45 minutes</span>
                         </div>
                       </li>
                       <li className="flex items-start space-x-3 sm:space-x-4 group/item">
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-primary to-secondary rounded-full mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform" />
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <span className="text-sm sm:text-base font-semibold text-foreground group-hover/item:text-primary transition-colors">Sculpt and Detox Combo</span>
                           <span className="text-xs sm:text-sm text-muted-foreground block mt-1">135 minutes</span>
                         </div>
@@ -404,7 +401,7 @@ const Services = () => {
           </div>
 
           {/* Consultation Notice */}
-          <Card className="mb-8 sm:mb-10 border-0 shadow-lg bg-gradient-to-r from-accent/10 via-accent/8 to-secondary/10 animate-fade-in backdrop-blur-sm">
+          <Card className="mb-8 sm:mb-10 border-0 shadow-lg bg-gradient-to-br from-card via-card to-card/95 animate-fade-in backdrop-blur-sm">
             <CardContent className="relative p-5 sm:p-6">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-br from-accent to-secondary rounded-full mt-2 flex-shrink-0" />
@@ -518,7 +515,7 @@ const Services = () => {
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
-                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card to-card/95">
+                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm">
                     <CardContent className="p-5 sm:p-6">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-accent/20 to-accent/30 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md group-hover/item:shadow-lg group-hover/item:scale-110 transition-all duration-300">
                         <Pill className="w-7 h-7 sm:w-8 sm:h-8 text-accent" />
@@ -532,7 +529,7 @@ const Services = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card to-card/95">
+                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm">
                     <CardContent className="p-5 sm:p-6">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/20 to-primary/30 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md group-hover/item:shadow-lg group-hover/item:scale-110 transition-all duration-300">
                         <Users className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
@@ -542,7 +539,7 @@ const Services = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card to-card/95">
+                  <Card className="group/item relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm">
                     <CardContent className="p-5 sm:p-6">
                       <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-secondary/20 to-secondary/30 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md group-hover/item:shadow-lg group-hover/item:scale-110 transition-all duration-300">
                         <Heart className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
