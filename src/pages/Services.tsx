@@ -19,7 +19,6 @@ import {
   Waves,
   Flower2
 } from "lucide-react";
-import servicesImage from "@/assets/services-medical.jpg";
 import woodTherapyImage from "@/assets/WhatsApp Image 2026-01-06 at 17.25.59.jpeg";
 
 // Static data - moved outside component to prevent recreation on each render
@@ -185,14 +184,7 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${servicesImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-secondary/80" />
-        </div>
-        
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-primary via-primary/90 to-secondary/80">
         <div className="relative container mx-auto px-4 sm:px-6 z-10 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg animate-fade-in">
             Our Services
