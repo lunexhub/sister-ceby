@@ -9,7 +9,6 @@ import {
   Syringe, 
   Activity,
   ArrowRight,
-  CheckCircle,
   Phone
 } from "lucide-react";
 import heroImage from "@/assets/hero-medical.jpg";
@@ -50,8 +49,8 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen sm:min-h-[95vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden py-12 sm:py-16 lg:py-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+          style={{ backgroundImage: `url(${heroImage})`, transform: 'translateZ(0)' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-secondary/80" />
         </div>
@@ -64,6 +63,19 @@ const Home = () => {
                 Quality & Affordable
                 <span className="block text-accent drop-shadow-lg">Medical Care</span>
               </h1>
+              {/* Trust Badge - Registration Numbers */}
+              <div className="mb-3 sm:mb-4 animate-fade-in" style={{ animationDelay: '50ms' }}>
+                <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-md">
+                  <span className="text-white/90 text-[9px] sm:text-[10px] font-medium leading-tight">
+                    ✓ Licensed: PR 1185918 | REG 2024/457886/07 | PR 1246100
+                  </span>
+                </div>
+              </div>
+              <div className="mb-3 sm:mb-4 animate-fade-in" style={{ animationDelay: '100ms' }}>
+                <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-white text-sm sm:text-base font-semibold shadow-lg">
+                  20+ Years Experience
+                </span>
+              </div>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/95 mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 leading-relaxed px-2 sm:px-0">
                 Your trusted healthcare partner in Kempton Park. Comprehensive medical services for the whole family.
               </p>
@@ -90,6 +102,42 @@ const Home = () => {
           <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center shadow-lg">
             <div className="w-1 h-3 bg-white/70 rounded-full mt-2" />
           </div>
+        </div>
+      </section>
+
+      {/* Trust & Qualifications Section */}
+      <section className="py-8 sm:py-12 bg-gradient-to-b from-background to-muted/10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <Card className="group relative overflow-hidden border-0 shadow-lg bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <CardContent className="relative py-6 sm:py-8 px-4 sm:px-6">
+              <div className="text-center mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors">
+                  Professional Qualifications & Credentials
+                </h2>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-sm sm:text-base text-muted-foreground">
+                <span className="font-semibold text-foreground">Registered Nurse</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Midwife</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Nurse Clinician</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Infection Prevention and Control Practitioner</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">NIMART Trained</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Diabetes Educator</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Peer Educator</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Wellness Promoter</span>
+                <span className="text-primary">|</span>
+                <span className="font-semibold text-foreground">Dispensing Licence</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </CardContent>
+          </Card>
         </div>
       </section>
 

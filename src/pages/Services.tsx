@@ -325,7 +325,8 @@ const Services = () => {
                   <img 
                     src={woodTherapyImage} 
                     alt="Wood Therapy Massage Tools"
-                    className="w-full h-full object-contain p-4 sm:p-6 lg:p-8 opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                    className="w-full h-full object-contain p-4 sm:p-6 lg:p-8 opacity-90 group-hover:opacity-100 transition-opacity duration-500 will-change-opacity"
+                    style={{ transform: 'translateZ(0)' }}
                     loading="lazy"
                     decoding="async"
                   />

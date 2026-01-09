@@ -9,8 +9,8 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] sm:min-h-[60vh] lg:min-h-[60vh] flex items-center justify-center overflow-hidden py-8 sm:py-12 lg:py-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760143661/johannesburg-4322256_1280_neqyrj.jpg)` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dnnwvmh3n/image/upload/v1760143661/johannesburg-4322256_1280_neqyrj.jpg)`, transform: 'translateZ(0)' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-secondary/80" />
         </div>

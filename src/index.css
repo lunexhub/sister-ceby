@@ -112,30 +112,68 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    text-rendering: optimizeLegibility;
+    /* Smooth scrolling with hardware acceleration */
+    scroll-behavior: smooth;
+    /* Prevent overscroll bounce on mobile */
+    overscroll-behavior-y: none;
+    /* Better touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    /* Optimize scrolling performance */
+    will-change: scroll-position;
   }
   
-  /* Ensure proper text rendering on all devices */
-  html {
-    text-rendering: optimizeLegibility;
-  }
-  
-  /* Smooth scrolling */
-  @media (prefers-reduced-motion: no-preference) {
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 }
 
 @layer utilities {
+  /* GPU-accelerated animations for smooth scrolling */
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Smooth transform transitions */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   /* Modern mobile optimizations */
   @media (max-width: 640px) {
     .mobile-text-balance {
       text-wrap: balance;
+    }
+    
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -0.02em;
     }
   }
   
@@ -144,10 +182,11 @@ All colors MUST be HSL.
     .card-hover-effect {
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                   box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform, box-shadow;
     }
     
     .card-hover-effect:hover {
-      transform: translateY(-4px);
+      transform: translateY(-4px) translateZ(0);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
                   0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
@@ -167,11 +206,21 @@ All colors MUST be HSL.
     padding-right: env(safe-area-inset-right);
   }
   
-  /* Better mobile typography */
-  @media (max-width: 640px) {
-    h1, h2, h3 {
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
+  /* Optimize images for smooth scrolling */
+  img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Smooth scrolling sections */
+  section {
+    contain: layout style paint;
+  }
+  
+  /* Prevent layout shifts during scroll for animated elements only */
+  [class*="animate-"] {
+    will-change: transform, opacity;
   }
 }
