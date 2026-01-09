@@ -83,7 +83,7 @@ const Contact = () => {
                 <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-foreground group-hover:text-primary transition-colors">Opening Hours</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Mon-Fri: 09:00-17:30<br />
-                  Sat: 09:00-14:00
+                  Sat: 09:00 AM - 14:00 PM
                 </p>
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </CardContent>
@@ -109,7 +109,7 @@ const Contact = () => {
                   </div>
                   <div className="flex justify-between items-center py-2 sm:py-3 border-b border-border">
                     <span className="font-semibold text-sm sm:text-base">Saturday</span>
-                    <span className="text-muted-foreground text-xs sm:text-sm">09:00 AM - 14:00</span>
+                    <span className="text-muted-foreground text-xs sm:text-sm">09:00 AM - 14:00 PM</span>
                   </div>
                   <div className="flex justify-between items-center py-2 sm:py-3">
                     <span className="font-semibold text-sm sm:text-base">Sunday</span>
